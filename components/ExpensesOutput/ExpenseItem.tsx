@@ -1,16 +1,21 @@
 import { GlobalStyles } from "@/constants/Styles";
 import { getFormattedDate } from "@/util/date";
+import { useNavigation } from "@react-navigation/native";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 
 interface Props {
+  id: string;
   description: string;
   date: Date;
   amount: number;
 }
 
-const ExpenseItem: React.FC<Props> = ({ description, date, amount }) => {
+const ExpenseItem: React.FC<Props> = ({ id, description, date, amount }) => {
+  const navigation = useNavigation<any>();
   const pressHandler = () => {
-    console.log("pressed-item");
+    navigation.navigate("ManageExpense", {
+      expenseId: id,
+    });
   };
   return (
     <Pressable
