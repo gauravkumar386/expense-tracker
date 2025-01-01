@@ -31,6 +31,8 @@ export default Button;
 const styles = StyleSheet.create({
   button: {
     borderRadius: 4,
+    borderWidth: 1,
+    borderColor: "#fff",
     padding: 8,
     backgroundColor: GlobalStyles.colors.primary500,
   },
